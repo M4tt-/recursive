@@ -41,6 +41,13 @@ void printIntArray(int array[], int length){
 	}
 }
 
+int sumDig(int n){
+	if (n != 0)
+       return (n%10 + sumDig(n/10));
+    else
+       return 0;
+}
+
 int main(void){
 
 	printf("Testing recursiveFactorial() ... \n");
@@ -118,6 +125,21 @@ int main(void){
 	printf("Expected Result: 1 1 \n");
 	printf("Actual Result:   ");
 	printIntArray(array4,2);
+	printf("\n");
+	
+	printf("Testing sumDig()...\n");
+	printf("Case 1: Calling sumDig(0)\n");
+	printf("Expected Result: 0\n");
+	printf("Actual Result:   %d\n", sumDig(0));
+	printf("Case 2: Calling sumDig(6)\n");
+	printf("Expected Result: 6\n");
+	printf("Actual Result:   %d\n", sumDig(6));
+	printf("Case 3: Calling sumDig(36)\n");
+	printf("Expected Result: 33\n");
+	printf("Actual Result:   %d\n", sumDig(31446573));
+	printf("Case 4: Calling sumDig(29465)\n");
+	printf("Expected Result: 26\n");
+	printf("Actual Result:   %d\n", sumDig(29465));
 	printf("\n");
 
 	return 0;
