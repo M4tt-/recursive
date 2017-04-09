@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/************************************************************\
+*       FUNCTION: COUNT NUMBER OF DIGITS IN AN INT          *
+\************************************************************/
 int numDig(int n){
 	int count = 0;
 	if(n!=0){
@@ -21,6 +24,10 @@ int numDig(int n){
 	}
 }
 
+
+/************************************************************\
+*       FUNCTION: COMPUTE N!			            *
+\************************************************************/
 int factorial(int n){
 	if(n == 0)
 		return 1;
@@ -31,12 +38,22 @@ int factorial(int n){
 			return n;
 	}
 }
+
+
+/************************************************************\
+*       FUNCTION: PRINT ALL NATURAL NUMBERS UP TO N         *
+\************************************************************/
 void printUp2N(int n){
 	if(n > 0){
 		printUp2N(n-1);
 		printf("%d ", n);
 	}
 }
+
+
+/************************************************************\
+*       FUNCTION: SUM ALL NUMBERS UP TO N	            *
+\************************************************************/
 int sum2N(int n){
 	if(n>0)
 		return sum2N(n-1)+n;
@@ -44,6 +61,10 @@ int sum2N(int n){
 
 }
 
+
+/************************************************************\
+*       FUNCTION: PRINT CONTENT OF INT ARRAY                *
+\************************************************************/
 void printIntArray(int array[], int length){
 	if(length>0){
 		printIntArray(array,length-1);
@@ -51,6 +72,10 @@ void printIntArray(int array[], int length){
 	}
 }
 
+
+/************************************************************\
+*       FUNCTION: SUM ALL OF THE INDIVIDUAL DIGITS IN N     *
+\************************************************************/
 int sumDig(int n){
 	if (n != 0)
        return (n%10 + sumDig(n/10));
@@ -58,6 +83,10 @@ int sumDig(int n){
        return 0;
 }
 
+
+/************************************************************\
+*       FUNCTION: SUM EACH ADJACENT PAIR OF DIGITS IN N     *
+\************************************************************/
 int sum2Dig(int n){
 	int nd = numDig(n);
 	if(nd%2!=0 && nd>1){
